@@ -10,10 +10,13 @@ ConnectUp Assignment -
 
    
 Continue developing your own version on LinkedIn providing web access to users' resumes.
+
 What's New?
 
 Recruiters can now post jobs - jobs have skill requirements as part of the posting
+
 Users can search for jobs in addition to people, companies and schools
+
 Users receive notifications when jobs that match their skills are posted
 
 The requirements from the last challenge must still be met.
