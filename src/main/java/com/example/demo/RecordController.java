@@ -36,12 +36,10 @@ public class RecordController {
         }
 
    /* @RequestMapping("/")
-    public String gojoblist(){
+    public String goindex(){
         return "index";
     }
-    @RequestMapping("/joblist")
-    public String index(){
-        return "index";
+
     }*/
     @RequestMapping("/user")
     public String goUser(Model model, @RequestParam("first") String first, String middle, String last, String email, String degree, String field, String school, String YearGrad,

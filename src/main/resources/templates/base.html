@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="www.thymeleaf.org ">
+<html lang="en" xmlns:th="www.thymeleaf.org " xmlns:sec="www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,6 +16,11 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
     </th:block>
+    <style>
+        body {
+            background-color:white ;
+        }
+    </style>
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top" th:fragment="nav">
@@ -27,7 +32,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">SecureBones</a>
+
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav nav-justified">
@@ -37,6 +42,11 @@
                 <li><a href="/register">Register</a></li>
                 <li><a href="/userlist">User List</a></li>
                 <li><a href="/joblist">Job List</a></li>
+                <div  sec:authorize = "hasAuthority('ADMIN')">
+                    <li><a href="/newjob">New Job</a></li>
+                </div>
+
+
             </ul>
         </div><!--/.nav-collapse -->
     </div>

@@ -28,6 +28,14 @@ public class JobController {
         return "joblist";
     }
 
+    @RequestMapping(value = "/newjob")
+    public String goNewJob(Model model) {
+
+        model.addAttribute(new Job());
+        return "NewJob";
+    }
+
+
 
 
 
