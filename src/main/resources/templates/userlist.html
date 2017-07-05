@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org " xmlns:sec="www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Bootstrap 101 Template</title>
+
+    <th:block th:replace="base :: head"></th:block>
+</head>
+<body>
+<th:block th:replace="base :: nav"></th:block>
+
+<div class = "container">
+    <div class = "table-responsive">
+        <table class="table">
+            <tr>
+                <th class="text-center" height="80">First</th>
+                <th class="text-center" height="80">Middle</th>
+                <th class="text-center" height="80">Last</th>
+                <th class="text-center" height="80">Degree</th>
+                <th class="text-center" height="80">Field</th>
+                <th class="text-center" height="80">School</th>
+                <th class="text-center" height="80">Year</th>
+                <th class="text-center" height="80">Skill</th>
+                <th class="text-center" height="80">Company</th>
+                <th class="text-center" height="80">Email</th>
+                <th class="text-center" height="80">Title</th>
+                <th class="text-center" height="80">Duration</th>
+                <th class="text-center" height="80">Duty</th>
+                <th class="text-center" height="80">Proficiency</th>
+            </tr>
+
+
+
+
+            <th:block th:each = "record: ${recordList}">
+                <tr>
+                    <td class="text-center">  <p th:utext = "${record.first} " height="80">Transaction  </p>
+
+                    </td>
+                    <td class="text-center"><p th:utext = "${record.middle } " height="80">Transaction  </p>
+                    </td>
+
+                    <td  class="text-center"><p th:utext = "${record.last} " height="80">Transaction  </p>
+                    </td>
+                    <td class="text-center"><p th:utext = "${record.degree } " height="80">Transaction  </p>
+                    </td>
+                    <td class="text-center"><p th:utext = "${record.field } " height="80">Transaction  </p>
+                    </td>
+                    <td class="text-center"><p th:utext = "${record.school} " height="80">Transaction  </p>
+                    </td>
+                    <td class="text-center"><p th:utext = "${record.yearGrad } " height="80">Transaction  </p>
+                    </td>
+                    <td class="text-center"><p th:utext = "${record.skill } " height="80">Transaction  </p>
+                    </td>
+                    <td class="text-center"><p th:utext = "${record.company } " height="80">Transaction  </p>
+                    </td>
+                    <td class="text-center"><p th:utext = "${record.email } " height="80">Transaction  </p>
+                    </td>
+                    <td class="text-center"><p th:utext = "${record.workTitle } " height="80">Transaction  </p>
+                    </td>
+                    <td class="text-center"><p th:utext = "${record.workDur } " height="80">Transaction  </p>
+                    </td>
+                    <td class="text-center"><p th:utext = "${record.duty} " height="80">Transaction  </p>
+                    </td>
+                    <td class="text-center"><p th:utext = "${record.proficiency} " height="80">Transaction  </p>
+                    </td>
+
+                </tr>
+            </th:block>
+
+
+
+            <!--<tr> <td> <p th:text="${result}"></p> </td> </tr>-->
+
+            <!--  <div th:eachrecordtion: ${transactionList}">
+                  <tr>
+                      <td>
+                  <p th:with = "result=resulrecordtion.amount}"> Result</p>
+                  <span th:text = "${result}"> Result</span>
+                      </td>
+                  </tr>
+              </div>
+              -->
+
+
+        </table>
+
+
+
+
+    </div>
+</div>
+
+
+<th:block th:replace="base :: footlinks"></th:block>
+</body>
+
+</html>

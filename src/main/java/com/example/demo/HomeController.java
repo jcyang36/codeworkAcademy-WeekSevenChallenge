@@ -19,11 +19,6 @@ public class HomeController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/")
-    public String index(){
-        return "index";
-    }
-
     @RequestMapping("/login")
     public String login(){
         return "login";

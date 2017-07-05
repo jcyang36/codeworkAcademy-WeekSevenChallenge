@@ -32,6 +32,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
         http
                 .authorizeRequests()
                 .antMatchers("/","/register").permitAll()
+                .antMatchers("/dosearchbyschool, /dosearchbycompany, /dosearchbyskill").hasRole("RECRUITER")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/login").permitAll()

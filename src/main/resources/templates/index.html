@@ -12,11 +12,108 @@
 <body>
 <th:block th:replace="base :: nav"></th:block>
 
-<div class="container">
     <br /><br />
-    <div class="starter-template">
-        <h1>SecureBones</h1>
-        <p class="lead">Use this document as a way to quickly start any new project.<br /> All you get is this text and a mostly barebones HTML document.</p>
+    <div class = "section">
+        <div class="container">
+
+            <h3>SEARCH BY</h3>
+
+            <form th:action = "@{/dosearchbyfirst}" id = "firstform" th:object = "${record}" method = "post">
+
+
+                <div class="form-group">
+                    <div class="row">
+
+                        <div class="col-md-4">
+                            <label for="exampleInputFirst1">First Name</label>
+                        </div>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="exampleInputFirst1" placeholder="first" th:field="*{first}"/>
+
+                        </div>
+                        <div class ="col-md-3">
+                            <input type="submit" value = "Submit"/>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+            </form>
+            <div  sec:authorize = "hasAuthority('ADMIN')">
+                <form th:action = "@{/dosearchbycompany}" id = "companyform" th:object = "${record}" method = "post">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="exampleInputCompany1">Company</label>
+                            </div>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="exampleInputCompany1" placeholder="company" th:field="*{company}"/>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="submit" value = "Submit"/>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <form th:action = "@{/dosearchbylast}" id = "lastform" th:object = "${record}" method = "post">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label for="exampleInputLast1">Last Name</label>
+                        </div>
+                        <div class="col-md-5">
+                            <input type="text" class="form-control" id="exampleInputLast1" placeholder="last" th:field="*{last}"/>
+                        </div>
+                        <div class="col-md-3">
+                            <input type="submit" value = "Submit"/>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
+            <div  sec:authorize = "hasAuthority('ADMIN')">
+                <form th:action = "@{/dosearchbyschool}" id = "schoolform" th:object = "${record}" method = "post" >
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="exampleInputActionSchool1">School</label>
+                            </div>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="exampleInputActionSchool1" placeholder="school" th:field="*{school}"/>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="submit" value = "Submit"/>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+            <div sec:authorize = "hasAuthority('ADMIN')">
+                <form th:action = "@{/dosearchbyskill}" id = "skillform" th:object = "${record}" method = "post">
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label for="exampleInputActionSkill1">Skill</label>
+                            </div>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" id="exampleInputActionSkill1" placeholder="skill" th:field="*{skill}"/>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="submit" value = "Submit"/>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
     </div>
     Logged in User:
     <div sec:authentication="name">
@@ -34,7 +131,7 @@
         This content is only shown to users.
     </div>
 
-</div><!-- /.container -->
+
 
 <th:block th:replace="base :: footlinks"></th:block>
 </body>
