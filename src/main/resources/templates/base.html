@@ -35,30 +35,31 @@
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav nav-justified">
                 <div class ="col-md-2">
-                <li ><a href="/">CONNECT UP</a></li>
+                    <li ><a href="/"><h5>CONNECT UP</h5></a></li>
+                </div>
+
+                <div class ="col-md-2">
+                <li><a href="/register"><h5>Register</h5></a></li>
+                </div>
+                <div class ="col-md-2">
+                <li><a href="/userlist"><h5>Resume List</h5></a></li>
+                </div>
+                <div class ="col-md-2">
+                <li><a href="/joblist"><h5>Job List</h5></a></li>
+                </div>
+                <div class="col-md-1" sec:authorize = "hasAuthority('ADMIN')">
+                    <li><a href="/newjob"><h5>New Job</h5></a></li>
+                </div>
+                <div class="col-md-1" sec:authorize = "hasAuthority('USER')">
+                    <li><a href="/myjobs"><h5>My Jobs</h5></a></li>
                 </div>
                 <div class ="col-md-1" sec:authorize = "isAnonymous()">
-                    <li><a href="/login">Login</a></li>
+                    <li><a href="/login"><h5>Login</h5></a></li>
 
                 </div>
 
                 <div class ="col-md-1" sec:authorize = "isAuthenticated()">
-                    <li><a href="/logout">Logout</a></li>
-                </div>
-                <div class ="col-md-2">
-                <li><a href="/register">Register</a></li>
-                </div>
-                <div class ="col-md-2">
-                <li><a href="/userlist">User List</a></li>
-                </div>
-                <div class ="col-md-2">
-                <li><a href="/joblist">Job List</a></li>
-                </div>
-                <div class="col-md-1" sec:authorize = "hasAuthority('ADMIN')">
-                    <li><a href="/newjob">New Job</a></li>
-                </div>
-                <div class="col-md-1" sec:authorize = "hasAuthority('USER')">
-                    <li><a href="/myjobs">My Jobs</a></li>
+                    <li><a href="/logout"><h5>Logout</h5></a></li>
                 </div>
 
             </ul>

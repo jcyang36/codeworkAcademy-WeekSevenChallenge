@@ -42,6 +42,7 @@ public class JobController {
         return "NewJob";
     }
 
+
    /* @RequestMapping ("/dosearchbyskills")
     public String doSearchBySkills(@RequestParam("skills") String skills, Model model) {
         model.addAttribute("jobList", jobRepository.findAllBySkills(skills));
