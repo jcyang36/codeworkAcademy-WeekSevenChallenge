@@ -30,7 +30,8 @@ public class JobController {
     @RequestMapping(value = "/joblist")
     public String goUserList(Model model) {
 
-        model.addAttribute(new Job());
+        model.addAttribute("jobList", jobRepository.findAll());
+
         return "joblist";
     }
 
@@ -41,13 +42,17 @@ public class JobController {
         return "NewJob";
     }
 
-    @RequestMapping ("/dosearchbyskills")
+   /* @RequestMapping ("/dosearchbyskills")
     public String doSearchBySkills(@RequestParam("skills") String skills, Model model) {
         model.addAttribute("jobList", jobRepository.findAllBySkills(skills));
         return "job";
+    }*/
+
+  @RequestMapping ("/dosearchbyskills")
+    public String doSearchBySkills(@RequestParam("skills") String skills, Model model) {
+        model.addAttribute("jobList", jobRepository.findJobsWithPartOfSkills(skills));
+        return "job";
     }
-
-
 
 
 

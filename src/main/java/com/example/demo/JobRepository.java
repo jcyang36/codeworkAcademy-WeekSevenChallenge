@@ -1,5 +1,7 @@
 package com.example.demo;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -8,5 +10,8 @@ import java.util.List;
  */
 public interface JobRepository extends CrudRepository<Job, Integer>{
 
-    public List<Job> findAllBySkills(String Skills);
+    public List<Job> findAllBySkills(String skills);
+    @Query("SELECT j FROM Job j WHERE j.skills LIKE CONCAT('%',:skills,'%')")
+    List<String> findJobsWithPartOfSkills(@Param("skills") String skills);
+
 }

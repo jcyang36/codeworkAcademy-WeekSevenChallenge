@@ -46,7 +46,7 @@
 
 
             </form>
-            <div  sec:authorize = "hasAuthority('ADMIN')">
+
                 <form th:action = "@{/dosearchbycompany}" id = "companyform" th:object = "${record}" method = "post">
                     <div class="form-group">
                         <div class="row">
@@ -62,7 +62,7 @@
                         </div>
                     </div>
                 </form>
-            </div>
+
             <form th:action = "@{/dosearchbylast}" id = "lastform" th:object = "${record}" method = "post">
                 <div class="form-group">
                     <div class="row">
@@ -80,7 +80,7 @@
 
             </form>
 
-            <div  sec:authorize = "hasAuthority('ADMIN')">
+
                 <form th:action = "@{/dosearchbyschool}" id = "schoolform" th:object = "${record}" method = "post" >
                     <div class="form-group">
                         <div class="row">
@@ -97,8 +97,8 @@
                     </div>
 
                 </form>
-            </div>
-            <div sec:authorize = "hasAuthority('ADMIN')">
+
+
                 <form th:action = "@{/dosearchbyskill}" id = "skillform" th:object = "${record}" method = "post">
                     <div class="form-group">
                         <div class="row">
@@ -115,7 +115,7 @@
                     </div>
 
                 </form>
-            </div>
+
 
 
 

@@ -20,7 +20,10 @@
         <table class="table">
             <tr>
                 <th class="text-center" height="80">Title</th>
-
+                <th class="text-center" height="80">Employer</th>
+                <th class="text-center" height="80">Salary Range</th>
+                <th class="text-center" height="80">Description</th>
+                <th class="text-center" height="80">Skills</th>
             </tr>
 
 
@@ -28,10 +31,11 @@
 
             <th:block th:each = "job: ${jobList}">
                 <tr>
-                    <td class="text-center">  <p th:utext = "${job.title} " height="80">Job  </p>
-
-                    </td>
-
+                    <td class="text-center">  <p th:utext = "${job.title} " height="80">Job  </p></td>
+                    <td class="text-center"> <p th:utext=" ${job.employer}" height = "80">Job</p></td>
+                    <td class="text-center"> <p th:utext = "${job.salaryRange}" height = "80">Job </p></td>
+                    <td class="text-center"><p th:utext = "${job.description}" height="80">Job</p></td>
+                    <td class="text-center"><p th:utext = "${job.skills}" height = "80">Job</p></td>
 
                 </tr>
             </th:block>

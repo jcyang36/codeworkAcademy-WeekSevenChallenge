@@ -67,7 +67,16 @@ public class Job {
     public void setSkills(String skills) {
         this.skills = skills;
     }
+    public Job(String title, String employer, String salaryRange, String description,String skills) {
+        this.title = title;
+        this.employer = employer;
+        this.salaryRange = salaryRange;
+        this.description= description;
+        this.skills = skills;
 
+    }
+    public Job() {
+    }
 
 
 
