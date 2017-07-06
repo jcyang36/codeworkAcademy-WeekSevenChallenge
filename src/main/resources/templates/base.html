@@ -17,8 +17,7 @@
         <![endif]-->
     </th:block>
     <style>
-        .nav ul{margin:0;}
-        .nav a {padding: 10px 10px; display:inline-block;}
+
     </style>
 </head>
 <body>
@@ -59,7 +58,7 @@
                     <li><a href="/newjob">New Job</a></li>
                 </div>
                 <div class="col-md-1" sec:authorize = "hasAuthority('USER')">
-                    <li><a href="/job">My Jobs</a></li>
+                    <li><a href="/myjobs">My Jobs</a></li>
                 </div>
 
             </ul>
