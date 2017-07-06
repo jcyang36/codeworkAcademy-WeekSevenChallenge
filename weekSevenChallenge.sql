@@ -1,3 +1,4 @@
+create schema resumeOne;
 INSERT INTO `resumeOne`.`role` (`role`) VALUES ('USER');
 INSERT INTO `resumeOne`.`role` (`role`) VALUES ('ADMIN');
 INSERT INTO `resumeOne`.`user` (`email`, `enabled`, `first_name`, `last_name`, `password`, `username`) VALUES ('bob@bob.com', TRUE, 'Bob', 'Bobberson', 'password', 'bob');
