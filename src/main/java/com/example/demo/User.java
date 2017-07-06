@@ -39,6 +39,8 @@ public class User {
     private String username;
 
 
+    @Column(name="skill")
+    private String skill;
 
 
     @ManyToMany(fetch = FetchType.EAGER)
@@ -109,17 +111,27 @@ public class User {
         this.roles = roles;
     }
 
+    public String getSkill() {
+        return skill;
+    }
 
-    public User(String email, String password, String firstName, String lastName, boolean enabled, String username) {
+    public void setSkill(String skill) {
+        this.skill = skill;
+    }
+
+
+    public User(String email, String password, String firstName, String lastName, boolean enabled, String username, String skill) {
         this.email = email;
         this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.enabled = enabled;
         this.username = username;
+        this.skill= skill;
     }
     public User() {
     }
+
 
     //  Getters and Setters
 }
