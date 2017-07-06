@@ -8,5 +8,5 @@ import java.util.List;
  */
 public interface JobRepository extends CrudRepository<Job, Integer>{
 
-
+    public List<Job> findAllBySkills(String Skills);
 }

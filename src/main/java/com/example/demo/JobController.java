@@ -20,6 +20,12 @@ public class JobController {
         @Autowired
         private JobRepository jobRepository;
 
+    @RequestMapping("/myjobs")
+    public String home( Model model) {
+
+        model.addAttribute(new Job());
+        return "myjobs";
+    }
 
     @RequestMapping(value = "/joblist")
     public String goUserList(Model model) {
@@ -34,6 +40,13 @@ public class JobController {
         model.addAttribute(new Job());
         return "NewJob";
     }
+
+    @RequestMapping ("/dosearchbyskills")
+    public String doSearchBySkills(@RequestParam("skills") String skills, Model model) {
+        model.addAttribute(jobRepository.findAllBySkills(skills));
+        return "job";
+    }
+
 
 
 
