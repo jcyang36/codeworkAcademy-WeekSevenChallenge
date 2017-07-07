@@ -17,17 +17,79 @@
 <br/>
 <br/>
 <div class = "container">
+    <table class="table">
+        <tr>
+            <th class="text-center" height="80">First</th>
+            <th class="text-center" height="80">Middle</th>
+            <th class="text-center" height="80">Last</th>
+            <th class="text-center" height="80">Degree</th>
+            <th class="text-center" height="80">Field</th>
+            <th class="text-center" height="80">School</th>
+            <th class="text-center" height="80">Year</th>
+            <th class="text-center" height="80">Skill</th>
+            <th class="text-center" height="80">Company</th>
+            <th class="text-center" height="80">Email</th>
+            <th class="text-center" height="80">Title</th>
+            <th class="text-center" height="80">Duration</th>
+            <th class="text-center" height="80">Duty</th>
+            <th class="text-center" height="80">Proficiency</th>
+        </tr>
 
-    <div th:each = "record: ${recordList}">
-        <p th:utext = "${record.first} +' ' +${record.middle}+' '+ ${record.last}">Record </p>
-        <p th:utext = "${record.email}"></p>
-        <h5>Education</h5>
-        <p th:utext = "${record.degree}+' in '+${record.field}+' &lt;br/&gt;'+${record.school}+', '+${record.yearGrad}">Record</p>
-        <h5>Experience</h5>
-        <p th:utext=" ${record.workTitle} +' &lt;br/&gt; ' +${record.company}+', '+${record.workDur}+'&lt;br/&gt; '+ ${record.duty}">Record</p>
-        <h5>Skills</h5>
-        <p th:utext="${record.skill}+ ', '+ ${record.proficiency}">Record</p>
-    </div>
+
+
+
+        <th:block th:each = "record: ${recordList}">
+            <tr>
+                <td class="text-center">  <p th:utext = "${record.first} " height="80">Transaction  </p>
+
+                </td>
+                <td class="text-center"><p th:utext = "${record.middle } " height="80">Transaction  </p>
+                </td>
+
+                <td  class="text-center"><p th:utext = "${record.last} " height="80">Transaction  </p>
+                </td>
+                <td class="text-center"><p th:utext = "${record.degree } " height="80">Transaction  </p>
+                </td>
+                <td class="text-center"><p th:utext = "${record.field } " height="80">Transaction  </p>
+                </td>
+                <td class="text-center"><p th:utext = "${record.school} " height="80">Transaction  </p>
+                </td>
+                <td class="text-center"><p th:utext = "${record.yearGrad } " height="80">Transaction  </p>
+                </td>
+                <td class="text-center"><p th:utext = "${record.skill } " height="80">Transaction  </p>
+                </td>
+                <td class="text-center"><p th:utext = "${record.company } " height="80">Transaction  </p>
+                </td>
+                <td class="text-center"><p th:utext = "${record.email } " height="80">Transaction  </p>
+                </td>
+                <td class="text-center"><p th:utext = "${record.workTitle } " height="80">Transaction  </p>
+                </td>
+                <td class="text-center"><p th:utext = "${record.workDur } " height="80">Transaction  </p>
+                </td>
+                <td class="text-center"><p th:utext = "${record.duty} " height="80">Transaction  </p>
+                </td>
+                <td class="text-center"><p th:utext = "${record.proficiency} " height="80">Transaction  </p>
+                </td>
+
+            </tr>
+        </th:block>
+
+
+
+        <!--<tr> <td> <p th:text="${result}"></p> </td> </tr>-->
+
+        <!--  <div th:eachrecordtion: ${transactionList}">
+              <tr>
+                  <td>
+              <p th:with = "result=resulrecordtion.amount}"> Result</p>
+              <span th:text = "${result}"> Result</span>
+                  </td>
+              </tr>
+          </div>
+          -->
+
+
+    </table>
 
 
 

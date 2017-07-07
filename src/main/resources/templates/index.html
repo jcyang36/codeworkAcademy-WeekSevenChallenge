@@ -21,7 +21,7 @@
 
             <h3>SEARCH BY</h3>
 
-            <div sec:authorize = "hasAuthority('ADMIN')">
+
             <form   th:action = "@{/dosearchbyfirst}" id = "firstform" th:object = "${record}" method = "post">
 
 
@@ -47,7 +47,7 @@
 
 
             </form>
-            </div>
+
                 <form th:action = "@{/dosearchbycompany}" id = "companyform" th:object = "${record}" method = "post">
                     <div class="form-group">
                         <div class="row">

@@ -29,9 +29,25 @@ public class Record {
     private String duty;
     private String proficiency;
 
+    public Record(String first, String middle, String last, String school, String skill, String company, String email, String degree, String field, String yearGrad, String workTitle, String workDur, String duty, String proficiency) {
+        this.first = first;
+        this.middle = middle;
+        this.last = last;
+        this.school = school;
+        this.skill = skill;
+        this.company = company;
+        this.email = email;
+        this.degree = degree;
+        this.field = field;
+        this.yearGrad = yearGrad;
+        this.workTitle = workTitle;
+        this.workDur = workDur;
+        this.duty = duty;
+        this.proficiency = proficiency;
+    }
+public Record(){
 
-
-
+}
 
     public int getId() {
         return id;
