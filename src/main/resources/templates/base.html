@@ -27,6 +27,8 @@
 <body>
 <nav class="navbar navbar-default " th:fragment="nav">
     <div class="container">
+
+
         <div class="navbar-header">
 
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -35,34 +37,36 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <div class = "upleft"  >
-              <div sec:authorize=" hasAuthority('ADMIN')">
-                  <a href="/create"><h5>Create</h5></a>
-              </div>
 
-              <div sec:authorize = "isAnonymous()">
-                    <a href="/login"><h5>Login</h5></a>
 
-                </div>
-
-                <div  sec:authorize = "isAuthenticated()">
-                    <a href="/logout"><h5>Logout</h5></a>
-                </div>
-
+        <div class="pull-right">
+            <a href = "/notifications">Notifications</a>
         </div>
-            <div id="upper">
+        <div class="clearfix"></div>
+        <div class = "pull-right">
+            <div sec:authorize = "isAnonymous()">
+                <a href="/login"><h5>Login</h5></a>
 
-
-                <a href = "/notifications">Notifications</a>
             </div>
 
+            <div  sec:authorize = "isAuthenticated()">
+                <a href="/logout"><h5>Logout</h5></a>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class= "pull-right" >
+            <div sec:authorize=" hasAuthority('ADMIN')">
+                <a href="/create"><h5>Create</h5></a>
+            </div>
+        </div>
+
+
+        <div id="navbar" class="collapse navbar-collapse">
 
             <ul class="nav nav-justified">
                 <div class ="col-md-2">
-                    <li ><a href="/"><h5>CONNECT UP</h5></a></li>
+                    <li ><a class="navbar-brand"href="/"><h4>CONNECT UP</h4></a></li>
                 </div>
 
                 <div class ="col-md-2">
@@ -74,7 +78,7 @@
                 </div>
 
                 <div class ="col-md-2">
-                <li><a href="/userlist"><h5>Resumes</h5></a></li>
+                <li><a href="/resumelist"><h5>Resumes</h5></a></li>
                 </div>
 
 

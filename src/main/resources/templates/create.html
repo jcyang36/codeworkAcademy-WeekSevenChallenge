@@ -42,6 +42,39 @@
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
+
+
+    <!-- NEW RESUME -->
+
+    <h4>New Resume</h4>
+    <form autocomplete="off" action="#" th:object="${record}" th:action="@{/user}"
+          method="post">
+        <div class="form-group">
+            <label for="first">First <mark><strong><span th:if="${#fields.hasErrors('first')}" th:errors="*{first}">First Error</span></strong></mark></label>
+            <input type="text" class="form-control" id="first" placeholder="First" th:field="*{first}" />
+        </div>
+        <div class="form-group">
+            <label for="middle">Middle <mark><strong><span th:if="${#fields.hasErrors('middle')}" th:errors="*{middle}">Middle Error</span></strong></mark></label>
+            <input type="text" class="form-control" id="middle" placeholder="Middle" th:field="*{middle}" />
+        </div>
+        <div class="form-group">
+            <label for="last">Last <mark><strong><span th:if="${#fields.hasErrors('last')}" th:errors="*{last}">Last Error</span></strong></mark></label>
+            <input type="text" class="form-control" id="last" placeholder="Last" th:field="*{last}" />
+        </div>
+        <div class="form-group">
+            <label for="degree">Degree <mark><strong><span th:if="${#fields.hasErrors('degree')}" th:errors="*{degree}">Degree Error</span></strong></mark></label>
+            <input type="text" class="form-control" id="degree" placeholder="Degree" th:field="*{degree}" />
+        </div>
+        <div class="form-group">
+            <label for="field">Field <mark><strong><span th:if="${#fields.hasErrors('field')}" th:errors="*{field}">Field Error</span></strong></mark></label>
+            <input type="text" class="form-control" id="field" placeholder="Field" th:field="*{field}" />
+        </div>
+        <div class="form-group">
+            <label for="school">School<mark><strong><span th:if="${#fields.hasErrors('school')}" th:errors="*{school}">Field Error</span></strong></mark></label>
+            <input type="text" class="form-control" id="school" placeholder="Field" th:field="*{school}" />
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
 </div><!-- /.container -->
 <th:block th:replace="base :: footlinks"></th:block>
 </body>

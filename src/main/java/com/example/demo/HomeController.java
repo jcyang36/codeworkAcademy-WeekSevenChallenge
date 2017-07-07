@@ -43,7 +43,7 @@ public class HomeController {
     @RequestMapping(value="/register", method = RequestMethod.GET)
     public String showRegistrationPage(Model model){
         model.addAttribute("user", new User());
-        return "registration";
+        return "register";
     }
 
 

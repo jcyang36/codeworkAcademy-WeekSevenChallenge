@@ -21,7 +21,8 @@ public class JobController {
 
         @Autowired
         private JobRepository jobRepository;
-
+        @Autowired
+        private RecordRepository recordRepository;
         @Autowired
         private UserRepository userRepository;
     @RequestMapping("/notifications")
@@ -48,11 +49,11 @@ public class JobController {
         return "joblist";
     }
 
-    @RequestMapping(value = "/newjob")
+    @RequestMapping(value = "/create")
     public String goNewJob(Model model) {
-
+        model.addAttribute( new Record());
         model.addAttribute(new Job());
-        return "NewJob";
+        return "create";
     }
 
 

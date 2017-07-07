@@ -32,11 +32,11 @@ public class RecordController {
 
 
 
-    @RequestMapping(value = "/userlist")
-        public String goUserList(@ModelAttribute Record record, Model model) {
+    @RequestMapping(value = "/resumelist")
+        public String goResumeList(@ModelAttribute Record record, Model model) {
 
             model.addAttribute(recordRepository.findAll());
-            return "userlist";
+            return "resumelist";
         }
 
     @RequestMapping("/")
@@ -45,10 +45,15 @@ public class RecordController {
 
         return "index";
     }
+    @RequestMapping("/search")
+    public String gosearch( Model model){
+        model.addAttribute(new Record());
 
+        return "search";
+    }
 
     @RequestMapping("/user")
-    public String goUser(Model model, @RequestParam("first") String first, String middle, String last, String email, String degree, String field, String school, String YearGrad,
+    public String goResume(Model model, @RequestParam("first") String first, String middle, String last, String email, String degree, String field, String school, String YearGrad,
                          String workTitle, String company, String workDur, String duty, String skill, String proficiency) {
 		/*    Output for names  */
 
