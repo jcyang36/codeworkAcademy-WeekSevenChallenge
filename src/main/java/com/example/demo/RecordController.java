@@ -28,15 +28,7 @@ public class RecordController {
 
         @Autowired
         private UserRepository userRepository;
-    @RequestMapping("/notifications")
-    public String notify( Model model, Principal principal){
-       model.addAttribute(new Record());
-       String username = principal.getName();
-       User user_current = userRepository.findByUsername(username);
-       model.addAttribute("skill", user_current.getSkill());
-        System.out.println(user_current.getSkill());
-        return "index";
-    }
+
 
 
 

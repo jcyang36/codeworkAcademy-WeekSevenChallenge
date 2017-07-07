@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.security.Principal;
+
 
 /**
  * Created by student on 6/23/17.
@@ -20,6 +22,17 @@ public class JobController {
         @Autowired
         private JobRepository jobRepository;
 
+        @Autowired
+        private UserRepository userRepository;
+    @RequestMapping("/notifications")
+    public String notify( Model model, Principal principal){
+
+        String username = principal.getName();
+        User user_current = userRepository.findByUsername(username);
+        model.addAttribute("skill", user_current.getSkill());
+        System.out.println(user_current.getSkill());
+        return "notifications";
+    }
     @RequestMapping("/myjobs")
     public String home( Model model) {
 
