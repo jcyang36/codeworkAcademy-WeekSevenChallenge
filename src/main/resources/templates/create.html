@@ -46,7 +46,7 @@
 
     <!-- NEW RESUME -->
 
-    <h4>New Resume Betty</h4>
+    <h4>New Resume</h4>
     <form autocomplete="off" action="#" th:object="${record}" th:action="@{/createresume}"
           method="post">
         <div class="form-group">
@@ -54,24 +54,56 @@
             <input type="text" class="form-control" id="first" placeholder="First" th:field="*{first}" />
         </div>
         <div class="form-group">
-            <label for="middle">Middle <mark><strong><span th:if="${#fields.hasErrors('middle')}" th:errors="*{middle}">Middle Error</span></strong></mark></label>
+            <label for="middle">Middle </label>
             <input type="text" class="form-control" id="middle" placeholder="Middle" th:field="*{middle}" />
         </div>
         <div class="form-group">
-            <label for="last">Last <mark><strong><span th:if="${#fields.hasErrors('last')}" th:errors="*{last}">Last Error</span></strong></mark></label>
+            <label for="last">Last </label>
             <input type="text" class="form-control" id="last" placeholder="Last" th:field="*{last}" />
         </div>
         <div class="form-group">
-            <label for="degree">Degree <mark><strong><span th:if="${#fields.hasErrors('degree')}" th:errors="*{degree}">Degree Error</span></strong></mark></label>
+            <label for="degree">Degree </label>
             <input type="text" class="form-control" id="degree" placeholder="Degree" th:field="*{degree}" />
         </div>
         <div class="form-group">
-            <label for="field">Field <mark><strong><span th:if="${#fields.hasErrors('field')}" th:errors="*{field}">Field Error</span></strong></mark></label>
+            <label for="field">Field </label>
             <input type="text" class="form-control" id="field" placeholder="Field" th:field="*{field}" />
         </div>
         <div class="form-group">
-            <label for="school">School<mark><strong><span th:if="${#fields.hasErrors('school')}" th:errors="*{school}">Field Error</span></strong></mark></label>
+            <label for="school">School</label>
             <input type="text" class="form-control" id="school" placeholder="School" th:field="*{school}" />
+        </div>
+        <div class="form-group">
+            <label for="year">Year</label>
+            <input type="text" class="form-control" id="year" placeholder="Year" th:field="*{yearGrad}" />
+        </div>
+        <div class="form-group">
+            <label for="skill">Skill</label>
+            <input type="text" class="form-control" id="skill" placeholder="Skill" th:field="*{skill}" />
+        </div>
+        <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" class="form-control" id="company" placeholder="Company" th:field="*{company}" />
+        </div>
+        <div class="form-group">
+            <label for="email">Email </label>
+            <input type="text" class="form-control" id="email" placeholder="Email" th:field="*{email}" />
+        </div>
+        <div class="form-group">
+            <label for="title">Title </label>
+            <input type="text" class="form-control" id="title" placeholder="Title" th:field="*{workTitle}" />
+        </div>
+        <div class="form-group">
+            <label for="duration">Duration </label>
+            <input type="text" class="form-control" id="duration" placeholder="Duration" th:field="*{workDur}" />
+        </div>
+        <div class="form-group">
+            <label for="duty">Duty</label>
+            <input type="text" class="form-control" id="duty" placeholder="Duty" th:field="*{duty}" />
+        </div>
+        <div class="form-group">
+            <label for="proficiency">Proficiency</label>
+            <input type="text" class="form-control" id="proficiency" placeholder="Proficiency" th:field="*{proficiency}" />
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
