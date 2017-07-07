@@ -18,9 +18,10 @@
     </th:block>
     <style>
     #upper {
-    position:relative;
-    float:right;
+
+        display:inline-block;
     }
+        .upleft{display:inline-block;}
     </style>
 </head>
 <body>
@@ -37,15 +38,19 @@
 
         </div>
         <div id="navbar" class="collapse navbar-collapse">
-            <div id="upper">
-                <div class ="col-md-1" sec:authorize = "isAnonymous()">
+          <div class = "upleft"  >
+                <div sec:authorize = "isAnonymous()">
                     <a href="/login"><h5>Login</h5></a>
 
                 </div>
 
-                <div class ="col-md-1" sec:authorize = "isAuthenticated()">
+                <div  sec:authorize = "isAuthenticated()">
                     <a href="/logout"><h5>Logout</h5></a>
                 </div>
+
+        </div>
+            <div id="upper">
+
 
                 <a href = "/notifications">Notifications</a>
             </div>

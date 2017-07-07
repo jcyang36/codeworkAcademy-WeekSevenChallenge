@@ -30,7 +30,7 @@ public class JobController {
         String username = principal.getName();
         User user_current = userRepository.findByUsername(username);
         model.addAttribute("skill", user_current.getSkill());
-        System.out.println(user_current.getSkill());
+        model.addAttribute("jobList", jobRepository.findJobsWithPartOfSkills(user_current.getSkill()));
         return "notifications";
     }
     @RequestMapping("/myjobs")
