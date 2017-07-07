@@ -39,7 +39,11 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <div class = "upleft"  >
-                <div sec:authorize = "isAnonymous()">
+              <div sec:authorize=" hasAuthority('ADMIN')">
+                  <a href="/create"><h5>Create</h5></a>
+              </div>
+
+              <div sec:authorize = "isAnonymous()">
                     <a href="/login"><h5>Login</h5></a>
 
                 </div>
@@ -55,6 +59,7 @@
                 <a href = "/notifications">Notifications</a>
             </div>
 
+
             <ul class="nav nav-justified">
                 <div class ="col-md-2">
                     <li ><a href="/"><h5>CONNECT UP</h5></a></li>
@@ -65,7 +70,7 @@
                 </div>
 
                 <div class ="col-md-2">
-                    <li ><a href="/"><h5>Search</h5></a></li>
+                    <li ><a href="/search"><h5>Search</h5></a></li>
                 </div>
 
                 <div class ="col-md-2">
