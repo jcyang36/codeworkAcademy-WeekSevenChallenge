@@ -32,10 +32,16 @@ public class RecordController {
 
 
 
+    @RequestMapping(value = "/createresume")
+    public String gocreateresume(@ModelAttribute Record record, Model model) {
+        recordRepository.save(record);
+        model.addAttribute("recordList", recordRepository.findAll());
+        return "resumelist";
+    }
     @RequestMapping(value = "/resumelist")
         public String goResumeList(@ModelAttribute Record record, Model model) {
 
-            model.addAttribute(recordRepository.findAll());
+            model.addAttribute("recordList",recordRepository.findAll());
             return "resumelist";
         }
 
@@ -52,69 +58,39 @@ public class RecordController {
         return "search";
     }
 
-    @RequestMapping("/user")
-    public String goResume(Model model, @RequestParam("first") String first, String middle, String last, String email, String degree, String field, String school, String YearGrad,
-                         String workTitle, String company, String workDur, String duty, String skill, String proficiency) {
-		/*    Output for names  */
 
-        model.addAttribute("FirstLine", first+" "+middle+" "+last);
-        model.addAttribute("email", email);
-
-		/* Output for names  */
-
-		/* Output for education  */
-        model.addAttribute("education", degree+" in "+field+" <br/>"+school+", "+YearGrad);
-
-
-		/*  Output for education  */
-
-		/*  Output for work   */
-        model.addAttribute("work" , workTitle +" <br/>"+company+", "+workDur+" <br/>"+duty);
-
-
-		/*  Output for work  */
-
-		/* Output for skills  */
-        model.addAttribute("skill" , skill+", "+proficiency);
-
-
-
-    /*  Output for skills  */
-        model.addAttribute(new Record());
-        return "user";
-    }
 
 @RequestMapping ("/dosearchbyfirst")
 public String doSearchByFirst(@RequestParam("first") String first, Model model) {
         model.addAttribute(recordRepository.findAllByFirst(first));
 
-    return "user";
+    return "resume";
 }
     @RequestMapping ("/dosearchbylast")
     public String doSearchByLast(@RequestParam("last") String last, Model model) {
         model.addAttribute(recordRepository.findAllByLast(last));
 
-        return "user";
+        return "resume";
     }
 
 
     @RequestMapping ("/dosearchbyschool")
     public String doSearchBySchool(@RequestParam("school") String school, Model model) {
         model.addAttribute(recordRepository.findAllBySchool(school));
-        return "user";
+        return "resume";
     }
 
     @RequestMapping ("/dosearchbycompany")
     public String doSearchByCompany(@RequestParam("company") String company, Model model) {
         model.addAttribute(recordRepository.findAllByCompany(company));
-        return "user";
+        return "resume";
     }
 
 
     @RequestMapping ("/dosearchbyskill")
     public String doSearchBySkill(@RequestParam("skill") String skill, Model model) {
         model.addAttribute(recordRepository.findAllBySkill(skill));
-        return "user";
+        return "resume";
     }
 
 

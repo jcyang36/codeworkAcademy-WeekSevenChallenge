@@ -18,26 +18,26 @@
 <div class="container">
     <br /><br /><br />
     <h4>New Job</h4>
-    <form autocomplete="off" action="#" th:object="${job}" th:action="@{/joblist}"
+    <form autocomplete="off" action="#" th:object="${job}" th:action="@{/createjob}"
            method="post">
         <div class="form-group">
-            <label for="title">Title <mark><strong><span th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Title Error</span></strong></mark></label>
+            <label for="title">Title </label>
             <input type="text" class="form-control" id="title" placeholder="Title" th:field="*{title}" />
         </div>
         <div class="form-group">
-            <label for="employer">Employer<mark><strong><span th:if="${#fields.hasErrors('employer')}" th:errors="*{employer}">Employer Error</span></strong></mark></label>
+            <label for="employer">Employer</label>
             <input type="text" class="form-control" id="employer" placeholder="Employer" th:field="*{employer}" />
         </div>
         <div class="form-group">
-            <label for="salaryRange">Salary Range <mark><strong><span th:if="${#fields.hasErrors('salaryRange')}" th:errors="*{salaryRange}"Salary Range Error</span></strong></mark></label>
+            <label for="salaryRange">Salary Range </label>
             <input type="text" class="form-control" id="salaryRange" placeholder="salaryRange" th:field="*{salaryRange}" />
         </div>
         <div class="form-group">
-            <label for="description">Description <mark><strong><span th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Description Error</span></strong></mark></label>
+            <label for="description">Description </label>
             <input type="text" class="form-control" id="description" placeholder="Description" th:field="*{description}" />
         </div>
         <div class="form-group">
-            <label for="skills">Skills <mark><strong><span th:if="${#fields.hasErrors('skills')}" th:errors="*{skills}">Skills</span></strong></mark></label>
+            <label for="skills">Skills </label>
             <input type="text" class="form-control" id="skills" placeholder="Skills" th:field="*{skills}" />
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
@@ -46,11 +46,11 @@
 
     <!-- NEW RESUME -->
 
-    <h4>New Resume</h4>
-    <form autocomplete="off" action="#" th:object="${record}" th:action="@{/user}"
+    <h4>New Resume Betty</h4>
+    <form autocomplete="off" action="#" th:object="${record}" th:action="@{/createresume}"
           method="post">
         <div class="form-group">
-            <label for="first">First <mark><strong><span th:if="${#fields.hasErrors('first')}" th:errors="*{first}">First Error</span></strong></mark></label>
+            <label for="first">First </label>
             <input type="text" class="form-control" id="first" placeholder="First" th:field="*{first}" />
         </div>
         <div class="form-group">
@@ -71,7 +71,7 @@
         </div>
         <div class="form-group">
             <label for="school">School<mark><strong><span th:if="${#fields.hasErrors('school')}" th:errors="*{school}">Field Error</span></strong></mark></label>
-            <input type="text" class="form-control" id="school" placeholder="Field" th:field="*{school}" />
+            <input type="text" class="form-control" id="school" placeholder="School" th:field="*{school}" />
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
