@@ -50,8 +50,8 @@ public class JobController {
     }
 
     @RequestMapping(value = "/create")
-    public String goNewJob(Model model) {
-        model.addAttribute( new Record());
+    public String goNewJob(@ModelAttribute Record record, Model model) {
+        recordRepository.save(record);
         model.addAttribute(new Job());
         return "create";
     }

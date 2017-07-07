@@ -24,6 +24,8 @@ public class HomeController {
     private UserValidator userValidator;
     @Autowired
     private UserService userService;
+    @Autowired
+    private UserRepository userRepository;
 
     @RequestMapping("/login")
     public String login(){
@@ -60,6 +62,15 @@ public class HomeController {
         }
         return "index";
     }
+
+    @RequestMapping(value = "/userlist")
+    public String goUserList(Model model) {
+
+        model.addAttribute("userList", userRepository.findAll());
+
+        return "userlist";
+    }
+
     public UserValidator getUserValidator() {
         return userValidator;
     }
