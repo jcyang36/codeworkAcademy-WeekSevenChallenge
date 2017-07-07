@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.validation.Valid;
-import java.security.Principal;
 
 @Controller
 
@@ -36,6 +36,7 @@ public class HomeController {
         model.addAttribute("skill", customUser.skill);
         return "job";
     }*/
+
 
 
 

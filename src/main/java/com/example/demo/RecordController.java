@@ -1,11 +1,16 @@
 package com.example.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.servlet.http.HttpServletRequest;
+import java.security.Principal;
 
 
 /**
@@ -21,26 +26,35 @@ public class RecordController {
         @Autowired
         private RecordRepository recordRepository;
 
-    @RequestMapping("/")
-    public String home( Model model) {
-
-        model.addAttribute(new Record());
+        @Autowired
+        private UserRepository userRepository;
+    @RequestMapping("/notifications")
+    public String notify( Model model, Principal principal){
+       model.addAttribute(new Record());
+       String username = principal.getName();
+       User user_current = userRepository.findByUsername(username);
+       model.addAttribute("skill", user_current.getSkill());
+        System.out.println(user_current.getSkill());
         return "index";
     }
 
-        @RequestMapping(value = "/userlist")
+
+
+    @RequestMapping(value = "/userlist")
         public String goUserList(@ModelAttribute Record record, Model model) {
 
             model.addAttribute(recordRepository.findAll());
             return "userlist";
         }
 
-   /* @RequestMapping("/")
-    public String goindex(){
+    @RequestMapping("/")
+    public String goindex( Model model){
+        model.addAttribute(new Record());
+
         return "index";
     }
 
-    }*/
+
     @RequestMapping("/user")
     public String goUser(Model model, @RequestParam("first") String first, String middle, String last, String email, String degree, String field, String school, String YearGrad,
                          String workTitle, String company, String workDur, String duty, String skill, String proficiency) {
